@@ -29,7 +29,7 @@ def main():
                 print('IP address: {:14} MAC address:{:>18}'.format(matches[i][0], matches[i][2]))
 
     except FileNotFoundError:
-        print("File not found")
+        print('File not found')
         sys.exit(2)
 
 
