@@ -2,7 +2,7 @@ import re
 import sys
 
 '''
-Поиск в файле dhcpd.leases активных аренд.
+Поиск в файле dhcpd.leases активных аренд
 '''
 
 
@@ -18,10 +18,10 @@ def main():
             content = leases.read()
 
             '''
-            lease ([0-9.]+) { -- подстрока с IP-адресом.
-            [^}]+(active) -- в начале строки нет символа "}" и есть подстрока "active".
+            lease ([0-9.]+) { -- подстрока с IP-адресом
+            [^}]+(active) -- в начале строки нет символа "}" и есть подстрока "active"
             [^}]+hardware ethernet ([:a-f0-9]+); -- в начале строки нет символа "}" и
-            есть подстрока "hardware ethernet" за которой следует МАС-дрес.
+            есть подстрока "hardware ethernet" за которой следует МАС-дрес
             '''
             matches = re.findall("lease ([0-9.]+) {[^}]+(active)[^}]+hardware ethernet ([:a-f0-9]+);", content)
 
